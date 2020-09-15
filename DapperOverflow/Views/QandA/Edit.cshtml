@@ -6,19 +6,20 @@
         <p>
             <label><b>Username</b></label><br />
             <input type="text"
-                   name="username" />
+                   name="username" 
+                   value="@Model.Username"/>
         </p>
         <p>
             <label><b>Title</b></label><br />
             <input type="text"
-                   name="title" />
+                   name="title" 
+                   value="@Model.Title"/>
         </p>
         <p>
             <label><b>Description</b></label><br />
             <textarea name="detail"
                       rows="20"
-                      cols="150">
-                </textarea>
+                      cols="150">@Model.Detail</textarea>
         </p>
         <br><br>
         <input type="submit" value="Submit">

@@ -119,3 +119,4 @@ C:\devbuild4\DapperOverflow\DapperOverflow\obj\Debug\netcoreapp3.1\DapperOverflo
 C:\devbuild4\DapperOverflow\DapperOverflow\obj\Debug\netcoreapp3.1\Razor\Views\QandA\Index.cshtml.g.cs
 C:\devbuild4\DapperOverflow\DapperOverflow\obj\Debug\netcoreapp3.1\Razor\Views\QandA\Add.cshtml.g.cs
 C:\devbuild4\DapperOverflow\DapperOverflow\obj\Debug\netcoreapp3.1\Razor\Views\QandA\Detail.cshtml.g.cs
+C:\devbuild4\DapperOverflow\DapperOverflow\obj\Debug\netcoreapp3.1\Razor\Views\QandA\Edit.cshtml.g.cs

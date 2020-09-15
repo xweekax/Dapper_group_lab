@@ -9,9 +9,15 @@ namespace DapperOverflow.Controllers
 {
     public class QandAController : Controller
     {
+        [HttpGet]
         public IActionResult Index() //Displays ALL question
         {
             List<Question> list = Question.ReadAll();            
+            return View(list);
+        }
+        [HttpPost]
+        public IActionResult Index(List<Question> list)
+        {
             return View(list);
         }
 
@@ -39,8 +45,22 @@ namespace DapperOverflow.Controllers
         }
         public IActionResult Edit(long _id)
         {
-
+            Question question = Question.Read(_id);
+            return View(question);
+        }
+        public IActionResult Delete(long _id)
+        {
+            Question.Delete(_id);
+            return RedirectToAction("Index");
+        }
+        public IActionResult Answer(long _id)
+        {
             return View();
+        }
+        public IActionResult Search(string search)
+        {
+            List<Question> questionlist = Question.Search(search);
+            return View("Index", questionlist);
         }
     }
 }

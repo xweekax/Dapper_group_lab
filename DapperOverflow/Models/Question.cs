@@ -55,5 +55,16 @@ namespace DapperOverflow.Models
             db.Update<Question>(question);
         }
 
+        public static void Delete(long _id)
+        {
+            IDbConnection db = new SqlConnection("Server=.;Database=DapperOverflow;user id=dbuser;password=abc123");
+            db.Delete(new Question() {id = _id});
+        }
+        public static List<Question> Search(string search)
+        {
+            IDbConnection db = new SqlConnection("Server=.;Database=DapperOverflow;user id=dbuser;password=abc123");
+            List<Question> questionlist = db.Query<Question>($"SELECT id, Title FROM Question WHERE Detail LIKE '%{search}%'").AsList();
+            return questionlist;
+        }
     }
 }

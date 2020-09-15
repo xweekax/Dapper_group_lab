@@ -5,6 +5,12 @@
 <h6>Author: @Model.Username</h6>
 <br /><br />
 <p>@Model.Detail</p>
-<br />
+<br /><br /><br />
+<button onclick="location.href='/QandA/Edit?_id=@Model.id'" value="@Model.Title">EDIT</button>
+<button onclick="location.href='/QandA/Delete?_id=@Model.id'" value="@Model.Title">DELETE</button>
+<br /><br />
+<button onclick="location.href='/QandA/Answer?_id=@Model.id'" value="@Model.Title">Add an Answer</button>
+<button onclick="location.href='/QandA/Close?_id=@Model.id'" value="@Model.Title">Mark as Resolved</button>
+
 
 

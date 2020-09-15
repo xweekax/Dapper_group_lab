@@ -10,11 +10,11 @@
         "projectUniqueName": "C:\\devbuild4\\DapperOverflow\\DapperOverflow\\DapperOverflow.csproj",
         "projectName": "DapperOverflow",
         "projectPath": "C:\\devbuild4\\DapperOverflow\\DapperOverflow\\DapperOverflow.csproj",
-        "packagesPath": "C:\\Users\\zscholts\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\jnofs\\.nuget\\packages\\",
         "outputPath": "C:\\devbuild4\\DapperOverflow\\DapperOverflow\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\zscholts\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jnofs\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

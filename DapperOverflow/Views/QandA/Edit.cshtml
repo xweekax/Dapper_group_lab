@@ -1,6 +1,6 @@
 ﻿@model Question
 
-<form action="/QandA/Add" method="post">
+<form action="/QandA/Save" method="post">
     <fieldset>
         <legend>Add Question</legend>
         <p>
@@ -23,5 +23,6 @@
         </p>
         <br><br>
         <input type="submit" value="Submit">
+        <input type="hidden" name="_id" value="@Model.id" />
     </fieldset>
 </form>

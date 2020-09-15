@@ -24,7 +24,7 @@ namespace DapperOverflow.Models
 
         public static Question Create(string _username, string _title, string _detail)
         {
-            IDbConnection db = new SqlConnection("Server=.;Database=DapperOverflow;user id=dbuser;password=abc123");
+            IDbConnection db = new SqlConnection("Server=GQJSN13\\SQLEXPRESS;Database=DapperOverflow;user id=newuser;password=abc123");
             Question question = new Question() { Username = _username, Title = _title, Detail = _detail };
             question.Posted = DateTime.Now;
             question.Status = 0;
@@ -37,32 +37,39 @@ namespace DapperOverflow.Models
 
         public static List<Question> ReadAll()
         {
-            IDbConnection db = new SqlConnection("Server=.;Database=DapperOverflow;user id=dbuser;password=abc123");
+            IDbConnection db = new SqlConnection("Server=GQJSN13\\SQLEXPRESS;Database=DapperOverflow;user id=newuser;password=abc123");
             List<Question> questionlist = db.GetAll<Question>().ToList();
             return questionlist;
         }
         public static Question Read(long _id)
         {
-            IDbConnection db = new SqlConnection("Server=.;Database=DapperOverflow;user id=dbuser;password=abc123");
+            IDbConnection db = new SqlConnection("Server=GQJSN13\\SQLEXPRESS;Database=DapperOverflow;user id=newuser;password=abc123");
             Question question = db.Get<Question>(_id);
             return question;
         }
 
-        public static void Update(long _id, string _title, string _detail)
+        public static Question Update(long _id, string _username, string _title, string _detail)
         {
-            IDbConnection db = new SqlConnection("Server=.;Database=DapperOverflow;user id=dbuser;password=abc123");
-            Question question = new Question() { id = _id, Title = _title, Detail = _detail };
-            db.Update<Question>(question);
+            IDbConnection db = new SqlConnection("Server=GQJSN13\\SQLEXPRESS;Database=DapperOverflow;user id=newuser;password=abc123");
+            Question question = new Question() { id = _id, Username = _username, Title = _title, Detail = _detail };
+
+            Question newquestion = Read(_id);
+            newquestion.Detail = _detail;
+            newquestion.Username = _username;
+            newquestion.Title = _title;
+            db.Update(newquestion);
+
+            return newquestion;
         }
 
         public static void Delete(long _id)
         {
-            IDbConnection db = new SqlConnection("Server=.;Database=DapperOverflow;user id=dbuser;password=abc123");
+            IDbConnection db = new SqlConnection("Server=GQJSN13\\SQLEXPRESS;Database=DapperOverflow;user id=newuser;password=abc123");
             db.Delete(new Question() {id = _id});
         }
         public static List<Question> Search(string search)
         {
-            IDbConnection db = new SqlConnection("Server=.;Database=DapperOverflow;user id=dbuser;password=abc123");
+            IDbConnection db = new SqlConnection("Server=GQJSN13\\SQLEXPRESS;Database=DapperOverflow;user id=newuser;password=abc123");
             List<Question> questionlist = db.Query<Question>($"SELECT id, Title, Username, Posted FROM Question WHERE Detail LIKE '%{search}%'").AsList();
             return questionlist;
         }

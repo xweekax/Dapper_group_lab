@@ -11,11 +11,12 @@
         border: 1px solid black;
     }
 </style>
-<table style="width:100%">
+<table>
     <tr>
-        <th>Date</th>
-        <th>Question</th>
-        <th>User</th>
+        <th style="width:200px">Date</th>
+        <th style="width:600px">Question</th>
+        <th style="width:100px">User</th>
+        <th style="width:140px"></th>
     </tr>
     @foreach (Question question in Model)
     {
@@ -23,6 +24,7 @@
         <th>@question.Posted</th>
         <th><a href="/QandA/Detail?_id=@question.id">@question.Title</a></th>
         <th>@question.Username</th>
+        <th><a href="/QandA/Edit?_id=@question.id"><b>EDIT </b></a> / <a href="/QandA/Delete?_id=@question.id"><b>DELETE</b></a></th>
     </tr>
     }
 </table>

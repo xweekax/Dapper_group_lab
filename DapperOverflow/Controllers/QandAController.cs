@@ -37,5 +37,10 @@ namespace DapperOverflow.Controllers
             Question question = Question.Read(_id);
             return View(question);
         }
+        public IActionResult Edit(long _id)
+        {
+
+            return View();
+        }
     }
 }

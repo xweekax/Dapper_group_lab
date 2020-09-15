@@ -63,7 +63,7 @@ namespace DapperOverflow.Models
         public static List<Question> Search(string search)
         {
             IDbConnection db = new SqlConnection("Server=.;Database=DapperOverflow;user id=dbuser;password=abc123");
-            List<Question> questionlist = db.Query<Question>($"SELECT id, Title FROM Question WHERE Detail LIKE '%{search}%'").AsList();
+            List<Question> questionlist = db.Query<Question>($"SELECT id, Title, Username, Posted FROM Question WHERE Detail LIKE '%{search}%'").AsList();
             return questionlist;
         }
     }

@@ -33,11 +33,11 @@ namespace DapperOverflow.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult Search() 
+        /*public IActionResult Search() 
         {
             List<Question> list = Question.ReadAll();
             return View(list);
-        }
+        }*/
         public IActionResult Detail(long _id)
         {
             Question question = Question.Read(_id);
@@ -59,6 +59,7 @@ namespace DapperOverflow.Controllers
         }
         public IActionResult Search(string search)
         {
+            ViewBag.Searchresult = "Search Results";
             List<Question> questionlist = Question.Search(search);
             return View("Index", questionlist);
         }

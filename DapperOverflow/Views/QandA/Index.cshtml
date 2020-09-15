@@ -1,0 +1,29 @@
+﻿@model List<Question>
+
+<h1>Questions</h1>
+<br /><br />
+
+<a href="/QandA/Add"><b>ADD A QUESTION</b></a>
+<br />
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+<table style="width:100%">
+    <tr>
+        <th>Date</th>
+        <th>Question</th>
+        <th>User</th>
+    </tr>
+    @foreach (Question question in Model)
+    {
+    <tr>
+        <th>@question.Posted</th>
+        <th><a href="/QandA/Detail?_id=@question.id">@question.Title</a></th>
+        <th>@question.Username</th>
+    </tr>
+    }
+</table>
+
